@@ -17,15 +17,15 @@ export function Button({
   return (
     <button
       className={clsx(
-        "font-bold transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer no-underline inline-block",
+        "inline-block cursor-pointer rounded-xl font-semibold no-underline transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2",
         {
-          "bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-lg hover:shadow-xl focus:ring-blue-500 border-0":
+          "border-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-md hover:from-cyan-600 hover:to-blue-700 hover:shadow-lg active:translate-y-px focus:ring-cyan-500":
             variant === "primary",
-          "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-lg hover:shadow-xl focus:ring-purple-500 border-0":
+          "border-0 bg-slate-900 text-white shadow-md hover:bg-slate-950 hover:shadow-lg active:translate-y-px focus:ring-slate-500":
             variant === "secondary",
-          "border-2 border-blue-600 bg-white text-blue-600 hover:bg-blue-50 active:bg-blue-100 focus:ring-blue-500 font-bold":
+          "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 active:translate-y-px focus:ring-cyan-500":
             variant === "outline",
-          "bg-gray-300 text-gray-900 hover:bg-gray-400 active:bg-gray-500 focus:ring-gray-500 font-bold":
+          "bg-slate-100 text-slate-900 hover:bg-slate-200 active:translate-y-px focus:ring-slate-500":
             variant === "ghost",
         },
         {
@@ -33,7 +33,7 @@ export function Button({
           "px-4 py-2.5 text-base leading-tight": size === "md",
           "px-6 py-3 text-lg leading-tight": size === "lg",
         },
-        "disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-lg",
+        "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:shadow-md",
         className
       )}
       {...props}

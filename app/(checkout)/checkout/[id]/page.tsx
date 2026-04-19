@@ -7,21 +7,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default async function CheckoutPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
   const session = await getSession();
 
   if (!session) {
-    redirect(`/login?redirect=/checkout/${params.id}`);
+    redirect(`/login?redirect=/checkout/${id}`);
   }
 
-  const product = await fetchProductById(params.id).catch(() => null);
+  const product = await fetchProductById(id).catch(() => null);
 
   if (!product) {
     notFound();
   }
 
-  const checkoutSession = await createCheckoutSession(params.id);
+  const checkoutSession = await createCheckoutSession(id);
 
   if (!checkoutSession.url) {
     throw new Error("Failed to create checkout session");

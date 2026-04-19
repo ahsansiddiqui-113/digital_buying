@@ -1,30 +1,28 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
 export function SessionProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+
   useEffect(() => {
     const supabase = createClient();
 
     // Listen for auth state changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, session) => {
-      // Session change detected
-      if (event === "SIGNED_IN") {
-        // User signed in - session is now active
-      } else if (event === "SIGNED_OUT") {
-        // User signed out - clear session
-      } else if (event === "TOKEN_REFRESHED") {
-        // Token automatically refreshed - user stays logged in
+    } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN" || event === "SIGNED_OUT" || event === "TOKEN_REFRESHED") {
+        router.refresh();
       }
     });
 
     return () => {
       subscription?.unsubscribe();
     };
-  }, []);
+  }, [router]);
 
   return children;
 }

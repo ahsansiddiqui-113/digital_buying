@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ChatbotWidget } from "@/components/support/chatbot-widget";
 import { SessionProvider } from "@/components/providers/session-provider";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
   title: "DigitalMarket - Premium Digital Products Marketplace",
@@ -22,12 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white antialiased">
+      <body className={`${manrope.variable} ${spaceGrotesk.variable} flex min-h-screen flex-col bg-slate-50 text-slate-900 antialiased`}>
         <SessionProvider>
           <Header />
           <main className="flex-1 w-full">
             {children}
           </main>
+          <ChatbotWidget />
           <Footer />
         </SessionProvider>
       </body>

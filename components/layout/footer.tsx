@@ -1,57 +1,57 @@
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white">
+    <footer className="mt-20 bg-slate-950 text-slate-200">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold"></span>
+            <div className="mb-4 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-blue-700">
+                <span className="text-sm font-bold text-white">D</span>
               </div>
               <h3 className="text-lg font-bold">DigitalMarket</h3>
             </div>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="leading-relaxed text-slate-400">
               The premier marketplace for premium digital products and resources from world-class creators.
             </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-6 text-white uppercase tracking-wide">Product</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="/products" className="hover:text-primary-400 transition-colors">Browse Products</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Categories</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Trending</a></li>
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-wide text-white">Marketplace</h4>
+            <ul className="space-y-3 text-slate-400">
+              <li><a href="/products" className="transition-colors hover:text-cyan-300">Browse Products</a></li>
+              <li><a href="/" className="transition-colors hover:text-cyan-300">Featured Collection</a></li>
+              <li><a href="/admin" className="transition-colors hover:text-cyan-300">Seller Dashboard</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-6 text-white uppercase tracking-wide">Company</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#" className="hover:text-primary-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Careers</a></li>
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-wide text-white">Support</h4>
+            <ul className="space-y-3 text-slate-400">
+              <li><a href="/login" className="transition-colors hover:text-cyan-300">Sign In</a></li>
+              <li><a href="/signup" className="transition-colors hover:text-cyan-300">Create Account</a></li>
+              <li><a href="/products" className="transition-colors hover:text-cyan-300">Product Help</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-6 text-white uppercase tracking-wide">Legal</h4>
-            <ul className="space-y-3 text-gray-400">
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">Contact Support</a></li>
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-wide text-white">Trust</h4>
+            <ul className="space-y-3 text-slate-400">
+              <li>Stripe-secured checkout</li>
+              <li>Instant digital delivery</li>
+              <li>24-hour secure download links</li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <div className="flex flex-col items-center justify-between md:flex-row">
+            <p className="text-sm text-slate-400">
               &copy; {new Date().getFullYear()} DigitalMarket. All rights reserved.
             </p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">LinkedIn</a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">GitHub</a>
+            <div className="mt-4 flex gap-4 md:mt-0">
+              <a href="/products" className="text-slate-400 transition-colors hover:text-cyan-300">Catalog</a>
+              <a href="/admin" className="text-slate-400 transition-colors hover:text-cyan-300">Admin</a>
+              <a href="/login" className="text-slate-400 transition-colors hover:text-cyan-300">Account</a>
             </div>
           </div>
         </div>
